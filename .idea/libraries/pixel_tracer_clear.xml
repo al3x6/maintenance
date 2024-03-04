@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="pixel_tracer_clear">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/doc/projet_vierge/pixel_tracer_clear.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

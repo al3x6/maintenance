@@ -8,7 +8,7 @@ public class Layer {
     }
 
     public void addShape(Shape shape){
-        this.shapes.
+        //this.shapes.
     }
 
 
