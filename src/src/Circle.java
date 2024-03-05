@@ -11,12 +11,12 @@ class Circle extends Shape{
     }
 
     public String toString() {
-        return "Circle : " + center + ", radius " + radius;
+        return super.toString()+"Circle : " + center + ", radius " + radius;
     }
 
     @Override
-    ArrayList<Pixel> draw() {
-  return null;
+    public ArrayList<Pixel> draw() {
+    return null;
  }
 
     public Point getCenter() {

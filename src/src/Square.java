@@ -8,7 +8,7 @@ public class Square extends Shape{
     }
 
     public String toString(){
-        return "Square : " + topLeft + ", width " + length;
+        return super.toString()+"Square : " + topLeft + ", width " + length;
     }
 
     public Point getTopLeft() {

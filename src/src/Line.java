@@ -1,4 +1,6 @@
-public class Line {
+import java.util.ArrayList;
+
+public class Line extends Shape{
     private Point startPoint;
     private Point endPoint;
 
@@ -8,10 +10,11 @@ public class Line {
     }
 
     public String toString(){
-        return "Line : "+ startPoint +", "+ endPoint;
+        return super.toString()+"Line : "+ startPoint +", "+ endPoint;
     }
 
-    public void draw() {
+    public ArrayList<Pixel> draw() {
+        return null;
     }
 
     public Point getStartPoint() {

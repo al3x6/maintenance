@@ -24,22 +24,38 @@ public class Layer {
         this.shapes = shapes;
     }
 
+    /**
+     * Ajoute un shape dans la liste de shapes d'un Layer
+     * @param shape Shape à ajouter
+     * */
     public void addShape(Shape shape){
         shapes.add(shape);
-        System.out.println("ajout d'une shape");
-        return;
+        System.out.println("Screen ID : "+ id +" | Layer ID : "+ shape.getId()+" ajouté");
     }
+    /**
+     * Supprime un Shape de la liste de shapes d'un Layer
+     * @param id ID du shape à supprimer
+     * */
     public void removeShape(int id){
         for(Shape shape : shapes){
             if(shape.getId()==id){
                 shapes.remove(shape);
-                System.out.println("Layer supprimé");
+                System.out.println("Shape ID : "+ id +" supprimé");
                 return;
             }
         }
-        System.out.println("Id Layer introuvable");
-        return;
+        System.out.println("Layer ID introuvable");
     }
+    /**
+     * Affiche la liste de shapes d'un Layer
+     * */
+    public void showShapes(){
+        System.out.println("Affichage des Layers");
+        for(Shape shape :shapes){
+            System.out.println("Layer ID: "+shape.getId() + " | " + shape);
+        }
+    }
+
     public int getId() {
         return id;
     }

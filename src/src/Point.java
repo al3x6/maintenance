@@ -5,11 +5,12 @@ class Point extends Shape {
  private int p_y;
 
  public Point(int x,int y){
-    this.p_x = x;
-    this.p_y = y;
+     super();
+     this.p_x = x;
+     this.p_y = y;
  }
  public String toString(){
-     return "Point : "+p_x+", "+p_y;
+     return super.toString()+"Point : "+p_x+", "+p_y + " |";
  }
 
 

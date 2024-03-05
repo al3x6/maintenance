@@ -11,14 +11,13 @@ class Rectangle extends Shape{
 		this.height = h;
 	}
 
-	ArrayList<Pixel> draw(){
+	public ArrayList<Pixel> draw(){
 		//	
 		return null;
 	};
 	
 	public String toString(){
-
-		return "Rectangle : "+topLeft.toString()+", width "+ width + ", hauteur "+ height;
+		return super.toString()+"Rectangle : "+topLeft.toString()+", width "+ width + ", hauteur "+ height;
 	}
 
 	public Point getTopLeft() {

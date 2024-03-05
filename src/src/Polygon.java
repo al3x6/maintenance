@@ -14,7 +14,7 @@ public class Polygon extends Shape{
         for(Point element : points){
             str += element.toString() + " ";
         }
-        return str;
+        return super.toString()+str;
     }
 
     public List<Point> getPoints() {

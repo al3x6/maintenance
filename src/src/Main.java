@@ -18,21 +18,20 @@ class Main{
         List<Point> lp = new ArrayList<>();
         lp.addAll(Arrays.asList(p1,p2,p3,p4));
         List<Point> lp2 = new ArrayList<>(Arrays.asList(p1, p2, p3,p4, p5));
-
+        //Ligne
+        Line l1 = new Line(p1,p2);
         //Carre
         Square s1 = new Square(p2 , 3);
         //Rectangle
         Rectangle r1 = new Rectangle(p1,5,4);
         //Cercle
         Circle c1 = new Circle(p1,6);
-        //Ligne
-        Line l1 = new Line(p1,p2);
         //Curve
         Curve cu1 = new Curve(lp);
         //Polygon
         Polygon po1 = new Polygon(lp2);
 
-        //Afficher de chaque shape
+        //Affichage de chaque shape
         System.out.println(p1);
         System.out.println(l1);
         System.out.println(s1);

@@ -19,7 +19,7 @@ public class Curve extends Shape{
         for(Point element : controlPoints){
             str += element.toString() + " ";
         }
-        return str;
+        return super.toString()+str;
     }
 
 

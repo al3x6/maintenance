@@ -56,10 +56,18 @@ public class Screen {
                 //shape.drow() (implémenter les algo drow, modifie la zoneDessin)
     }
 
+    /**
+     * Ajoute un layer dans la liste de layers d'un Layer
+     * @param layer Layer à ajouter
+     * */
     public void addLayer(Layer layer){
         layers.add(layer);
         System.out.println("Screen ID : "+ id +" | Layer ID : "+ layer.getId()+" ajouté");
     }
+    /**
+     * Supprime un Layer de la liste de layers d'un Screen
+     * @param id ID du Layer à supprimer
+     * */
     public void removeLayer(int id){
         for(Layer layer : layers){
             if(layer.getId()==id){
@@ -71,10 +79,13 @@ public class Screen {
         System.out.println("Layer ID introuvable");
         return;
     }
+    /**
+     * Affiche la liste de layers d'un Screen
+     * */
     public void showLayers(){
         System.out.println("Affichage des Layers");
         for(Layer layer:layers){
-            System.out.println("Layer ID: "+layer.toString() + " | " + layer.getShapes().size() + " shape(s)");
+            System.out.println("Layer ID: "+layer.getId() + " | " + layer.getShapes().size() + " shape(s)");
         }
         return;
     }
