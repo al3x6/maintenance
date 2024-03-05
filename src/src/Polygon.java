@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Polygon extends Shape{
-    private Point [] points;
+    private List<Point> points;
 
 
-    public Polygon(Point [] p){
+    public Polygon(List<Point> p){
         this.points = p;
     }
 
@@ -17,11 +17,11 @@ public class Polygon extends Shape{
         return str;
     }
 
-    public Point[] getPoints() {
+    public List<Point> getPoints() {
         return points;
     }
 
-    public void setPoints(Point[] points) {
+    public void setPoints(List<Point> points) {
         this.points = points;
     }
 }

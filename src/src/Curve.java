@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Curve extends Shape{
-    private Point [] controlPoints = new Point[4];
+    private List<Point> controlPoints = new ArrayList<>();
 
-    public Curve(Point[] lp){
-        if(lp.length != 4){
+    public Curve(List<Point> lp){
+        if(lp.size() != 4){
             System.out.println("Un curve doit contenir uniquement 4 elements");
         }
         else{
@@ -22,11 +23,11 @@ public class Curve extends Shape{
     }
 
 
-    public Point[] getControlPoints() {
+    public List<Point> getControlPoints() {
         return controlPoints;
     }
 
-    public void setControlPoints(Point[] controlPoints) {
+    public void setControlPoints(List<Point> controlPoints) {
         this.controlPoints = controlPoints;
     }
 }
