@@ -80,17 +80,28 @@ class Main {
         Line ligne = new Line(pligne1, pligne2);
 
         /////////////////// CERCLE
-        // Créer une instance de la classe Point
+        // Créer un Point
         Point center = new Point(5, 5);
-        // Créer une instance de la classe Circle
+        // Créer un cercle
         Circle cercle = new Circle(center, 4);
 
+        /////////////////// CARRE
+        // Créer un Point
+        Point pCarre = new Point(5, 5);
+        // Créer un carré
+        Square carre = new Square(pCarre, 4);
+
+        /////////////////// Rectangle
+        // Créer un point pour le coin supérieur gauche du rectangle
+        Point pRectangle = new Point(2, 3);
+        // Créer un rectangle
+        Rectangle rectangle = new Rectangle(pRectangle, 4, 5);
 
         /////////////////////////////////////////////////// LAYER
         // Créer une instance de la classe Layer
         Layer layer = new Layer();
         // Ajoute la forme Point au layer
-        layer.addShape(cercle);
+        layer.addShape(rectangle);
 
         /////////////////////////////////////////////////// SCREEN
         // Créer une instance de la classe Screen
