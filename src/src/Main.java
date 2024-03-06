@@ -72,11 +72,19 @@ class Main {
         // Créer une instance de la classe Point
         Point point = new Point(5, 5);
 
+        /////////////////// LIGNE
+        //Créer deux Point
+        Point p1 = new Point(1, 1);
+        Point p2 = new Point(5, 6);
+
+        // Créer une Ligne
+        Line ligne = new Line(p1, p2);
+
         /////////////////////////////////////////////////// LAYER
         // Créer une instance de la classe Layer
         Layer layer = new Layer();
         // Ajoute la forme Point au layer
-        layer.addShape(point);
+        layer.addShape(ligne);
 
         /////////////////////////////////////////////////// SCREEN
         // Créer une instance de la classe Screen
