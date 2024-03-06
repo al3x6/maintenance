@@ -7,6 +7,7 @@ import static java.lang.System.out;
 class Main {
     public static void main(String[] args) {
         System.out.println("Execution\n---------------------------------------------------------");
+        /**
         //Points
         Point p1 = new Point(4, 8);
         Point p2 = new Point(7, 5);
@@ -62,7 +63,30 @@ class Main {
         screen1.showLayers();
         screen1.removeLayer(1);
         screen1.showLayers();
+        */
 
+
+
+        /////////////////////////////////////////////////// FORME
+        /////////////////// POINT
+        // Créer une instance de la classe Point
+        Point point = new Point(5, 5);
+
+        /////////////////////////////////////////////////// LAYER
+        // Créer une instance de la classe Layer
+        Layer layer = new Layer();
+        // Ajoute la forme Point au layer
+        layer.addShape(point);
+
+        /////////////////////////////////////////////////// SCREEN
+        // Créer une instance de la classe Screen
+        Screen screen = new Screen(10, 10);
+        // Ajoute le layer à l'écran
+        screen.addLayer(layer);
+        // Dessine les formes sur l'écran
+        screen.dessin();
+        // Afficher l'écran
+        System.out.println(screen);
     }
 }
 

@@ -8,7 +8,7 @@ public class Pixel {
         this.y = y;
     }
 
-    public void draw(){
+    public void draw() {
         return;
     }
 

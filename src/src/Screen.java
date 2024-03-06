@@ -44,6 +44,13 @@ public class Screen {
         String str = "";
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < width; j++) {
+                if (zoneDessin[i][j].equals("0")) {
+                    zoneDessin[i][j] = ".";
+                    //str+=".";
+                } else {
+                    zoneDessin[i][j] = "#";
+                    //str+="#";
+                }
                 str += zoneDessin[i][j] + " ";
             }
             str += "\n";
@@ -54,11 +61,11 @@ public class Screen {
     public void dessin() {
         /**
          for layer : layers
-           if layer is not visible
-             continue
+         if layer is not visible
+         continue
          for shape : shapes (un layer contient des shapes)
          shape.draw() (implémenter les algo draw, modifie la zoneDessin)
-        */
+         */
 
         // Pour chaque Layer
         for (Layer layer : layers) {
@@ -70,23 +77,11 @@ public class Screen {
                 for (Pixel pixel : pixels) {
                     int x = pixel.getX();
                     int y = pixel.getY();
-                    if (x >= 0 && x < width && y >= 0 && y < length) {
+                    if (x >= 0 && x < width && y >= 0 && y < length) {    //pas obligé car bordure extensible
                         zoneDessin[y][x] = "1";
                     }
                 }
             }
-        }
-
-        // Pour parcourir la matrice et changer le symbole
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < width; j++) {
-                if (zoneDessin[i][j].equals("0")) {
-                    System.out.print(".");
-                } else if (zoneDessin[i][j].equals("1")) {
-                    System.out.print("#");
-                }
-            }
-            System.out.println();  // Passer à la ligne après chaque ligne de la matrice
         }
     }
 
