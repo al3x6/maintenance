@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 class Point extends Shape {
- private int p_x;
- private int p_y;
+    private int p_x;
+    private int p_y;
 
- public Point(int x,int y){
-     super();
-     this.p_x = x;
-     this.p_y = y;
- }
- public String toString(){
-     return super.toString()+"Point : "+p_x+", "+p_y + " |";
- }
+    public Point(int x, int y) {
+        super();
+        this.p_x = x;
+        this.p_y = y;
+    }
 
+    public String toString() {
+        return super.toString() + "Point : " + p_x + ", " + p_y + " |";
+    }
 
     public int getP_x() {
         return p_x;

@@ -10,61 +10,68 @@ public class Layer {
 
     /**
      * Instancie un Layer avec une liste de shapes vide
-     * */
-    public Layer(){
+     */
+    public Layer() {
         this.id = nextId++;
         this.shapes = new ArrayList<>();
     }
+
     /**
      * Instancie un Layer contenant une liste de shapes déjà faite
+     *
      * @param shapes Liste de shapes
-     * */
-    public Layer(List<Shape> shapes){
+     */
+    public Layer(List<Shape> shapes) {
         this.id = nextId++;
         this.shapes = shapes;
     }
 
     /**
      * Ajoute un shape dans la liste de shapes d'un Layer
+     *
      * @param shape Shape à ajouter
-     * */
-    public void addShape(Shape shape){
+     */
+    public void addShape(Shape shape) {
         shapes.add(shape);
-        System.out.println("Screen ID : "+ id +" | Layer ID : "+ shape.getId()+" ajouté");
+        System.out.println("Screen ID : " + id + " | Layer ID : " + shape.getId() + " ajouté");
     }
+
     /**
      * Supprime un Shape de la liste de shapes d'un Layer
+     *
      * @param id ID du shape à supprimer
-     * */
-    public void removeShape(int id){
-        for(Shape shape : shapes){
-            if(shape.getId()==id){
+     */
+    public void removeShape(int id) {
+        for (Shape shape : shapes) {
+            if (shape.getId() == id) {
                 shapes.remove(shape);
-                System.out.println("Shape ID : "+ id +" supprimé");
+                System.out.println("Shape ID : " + id + " supprimé");
                 return;
             }
         }
         System.out.println("Layer ID introuvable");
     }
+
     /**
      * Affiche la liste de shapes d'un Layer
-     * */
-    public void showShapes(){
+     */
+    public void showShapes() {
         System.out.println("Affichage des Layers");
-        for(Shape shape :shapes){
-            System.out.println("Layer ID: "+shape.getId() + " | " + shape);
+        for (Shape shape : shapes) {
+            System.out.println("Layer ID: " + shape.getId() + " | " + shape);
         }
     }
 
     public int getId() {
         return id;
     }
-    public List<Shape> getShapes(){
+
+    public List<Shape> getShapes() {
         return shapes;
     }
-    public String toString(){
+
+    public String toString() {
         return String.valueOf(id);
     }
-
 
 }

@@ -4,7 +4,7 @@ class PointTest {
 
     @org.junit.jupiter.api.Test
     void testToString() {
-        Point p = new Point( 2, 5);
+        Point p = new Point(2, 5);
         assertEquals(p.toString(), "Point : 2, 5");
     }
 
