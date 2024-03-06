@@ -124,6 +124,7 @@ class Main {
         Layer layer = new Layer();
         // Ajoute la forme Point au layer
         layer.addShape(curve);
+        //layer.addShape(ligne);
 
         /////////////////////////////////////////////////// SCREEN
         // Créer une instance de la classe Screen
