@@ -14,9 +14,32 @@ class Circle extends Shape {
         return super.toString() + "Circle : " + center + ", radius " + radius;
     }
 
-    @Override
     public ArrayList<Pixel> draw() {
-        return null;
+        ArrayList<Pixel> pixels = new ArrayList<>();
+
+        int x = 0;
+        int y = radius;
+        int d = 3 - (2 * radius);
+
+        while (y >= x) {
+            pixels.add(new Pixel(center.getP_x() + x, center.getP_y() + y));
+            pixels.add(new Pixel(center.getP_x() + y, center.getP_y() + x));
+            pixels.add(new Pixel(center.getP_x() - x, center.getP_y() + y));
+            pixels.add(new Pixel(center.getP_x() - y, center.getP_y() + x));
+            pixels.add(new Pixel(center.getP_x() + x, center.getP_y() - y));
+            pixels.add(new Pixel(center.getP_x() + y, center.getP_y() - x));
+            pixels.add(new Pixel(center.getP_x() - x, center.getP_y() - y));
+            pixels.add(new Pixel(center.getP_x() - y, center.getP_y() - x));
+
+            if (d < 0) {
+                d += 4 * x + 6;
+            } else {
+                d += 4 * (x - y) + 10;
+                y--;
+            }
+            x++;
+        }
+        return pixels;
     }
 
     public Point getCenter() {

@@ -74,17 +74,23 @@ class Main {
 
         /////////////////// LIGNE
         //Créer deux Point
-        Point p1 = new Point(1, 1);
-        Point p2 = new Point(5, 6);
-
+        Point pligne1 = new Point(1, 1);
+        Point pligne2 = new Point(5, 6);
         // Créer une Ligne
-        Line ligne = new Line(p1, p2);
+        Line ligne = new Line(pligne1, pligne2);
+
+        /////////////////// CERCLE
+        // Créer une instance de la classe Point
+        Point center = new Point(5, 5);
+        // Créer une instance de la classe Circle
+        Circle cercle = new Circle(center, 4);
+
 
         /////////////////////////////////////////////////// LAYER
         // Créer une instance de la classe Layer
         Layer layer = new Layer();
         // Ajoute la forme Point au layer
-        layer.addShape(ligne);
+        layer.addShape(cercle);
 
         /////////////////////////////////////////////////// SCREEN
         // Créer une instance de la classe Screen
