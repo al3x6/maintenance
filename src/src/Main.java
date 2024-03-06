@@ -97,11 +97,33 @@ class Main {
         // Créer un rectangle
         Rectangle rectangle = new Rectangle(pRectangle, 4, 5);
 
+        /////////////////// Polygone
+        // Créer une liste de points pour le polygone
+        List<Point> pPoly = new ArrayList<>();
+        pPoly.add(new Point(2, 2));
+        pPoly.add(new Point(4, 0));
+        pPoly.add(new Point(6, 2));
+        pPoly.add(new Point(5, 5));
+        pPoly.add(new Point(2, 5));
+        // Créer un Polygone
+        Polygon polygone = new Polygon(pPoly);
+
+        /////////////////// Courbe Bézier
+        // Créer une liste de points pour la courbe
+        List<Point> controlPoints = new ArrayList<>();
+        controlPoints.add(new Point(2, 2));
+        controlPoints.add(new Point(5, 2));
+        controlPoints.add(new Point(5, 5));
+        controlPoints.add(new Point(2, 5));
+
+        // Créer une instance de la classe Curve
+        Curve curve = new Curve(controlPoints);
+
         /////////////////////////////////////////////////// LAYER
         // Créer une instance de la classe Layer
         Layer layer = new Layer();
         // Ajoute la forme Point au layer
-        layer.addShape(rectangle);
+        layer.addShape(curve);
 
         /////////////////////////////////////////////////// SCREEN
         // Créer une instance de la classe Screen
