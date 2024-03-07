@@ -41,15 +41,15 @@ public class Screen {
     }
 
     public String toString() {
+        dessin();
         String str = "";
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < width; j++) {
-                if (zoneDessin[i][j].equals("0")) {
-                    zoneDessin[i][j] = ".";
-                    //str+=".";
-                } else {
+                if (zoneDessin[i][j].equals("1")){
                     zoneDessin[i][j] = "#";
                     //str+="#";
+                }else{
+                    zoneDessin[i][j]=".";
                 }
                 str += zoneDessin[i][j] + " ";
             }
@@ -59,14 +59,14 @@ public class Screen {
     }
 
     public void dessin() {
-        /**
+        /*
          for layer : layers
          if layer is not visible
          continue
          for shape : shapes (un layer contient des shapes)
          shape.draw() (implémenter les algo draw, modifie la zoneDessin)
          */
-
+        System.out.println("Voici votre desssin ! ");
         // Pour chaque Layer
         for (Layer layer : layers) {
             // Pour chaque shape dans le layer

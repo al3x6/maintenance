@@ -33,7 +33,7 @@ public class Layer {
      */
     public void addShape(Shape shape) {
         shapes.add(shape);
-        System.out.println("Screen ID : " + id + " | Layer ID : " + shape.getId() + " ajouté");
+        System.out.println("Layer ID : " + id + " | Shape ID : " + shape.getId() + " ajouté");
     }
 
     /**
@@ -56,9 +56,9 @@ public class Layer {
      * Affiche la liste de shapes d'un Layer
      */
     public void showShapes() {
-        System.out.println("Affichage des Layers");
+        System.out.println("Affichage des shapes");
         for (Shape shape : shapes) {
-            System.out.println("Layer ID: " + shape.getId() + " | " + shape);
+            System.out.println("Layer ID: => " + id  + " | " + shape);
         }
     }
 

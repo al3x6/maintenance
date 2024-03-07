@@ -3,12 +3,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
 import static java.lang.System.out;
 
 class Main {
     public static void main(String[] args) {
         System.out.println("Execution\n---------------------------------------------------------");
-        /**
+        /*
         //Points
         Point p1 = new Point(4, 8);
         Point p2 = new Point(7, 5);
@@ -65,7 +66,7 @@ class Main {
         screen1.removeLayer(1);
         screen1.showLayers();
         */
-
+/*
         /////////////////////////////////////////////////// FORME
         /////////////////// POINT
         // Créer une instance de la classe Point
@@ -135,8 +136,8 @@ class Main {
         // Afficher l'écran
         System.out.println(screen);
 
+*/
 
-        /**
         // Créer une instance de la classe Screen
         Screen screen = new Screen(20, 5);
         System.out.println(screen);
@@ -148,56 +149,89 @@ class Main {
         String choix = "menu";
         String choix2 = "null";
 
-        while (choix != "quit"){
-            if (choix == "menu")
-                System.out.println("Veuillez choisir une action : \n" +
-                        "A - Ajouter une forme \n" +
-                        "B - Afficher la liste des formes \n" +
-                        "C - Supprimer une forme \n" +
-                        "D - Tracer le dessin" +
-                        "E - Aide\n" +
-                        "F - Quitter");
-            choix = sc.nextLine();
-            System.out.println("Vous avez saisi : " + choix);
-            if (choix.equals("A")){
-                System.out.println("Quelle forme voulez-vous ajouter ? \n" +
-                        "1 - Un Point \n" +
-                        "2 - Une Ligne \n" +
-                        "3 - Un Cercle \n" +
-                        "4 - Un Carre \n" +
-                        "5 - Un Rectangle \n" +
-                        "6 - Un Polygone \n" +
-                        "7 - Revenir au menu précédent");
+        while (true) {
+            if (choix.equals("quit")){
+                break;
+            }
+            if (choix.equals("menu")) {
+                System.out.println("""
+                        Veuillez choisir une action :\s
+                        A - Ajouter une forme\s
+                        B - Afficher la liste des formes\s
+                        C - Supprimer une forme\s
+                        D - Afficher le dessin
+                        F - Quitter""");
                 choix2 = sc.nextLine();
-                System.out.println("Vous avez saisi : " + choix2);
-                if(choix2.equals("7")){
-                    break;
-                }
-                else if(choix2.equals("1")){
-                    System.out.println("Entrez coordonnées x : \n");
-                    int choixX = Integer.parseInt(sc.nextLine());
-                    System.out.println("Entrez coordonnées y : \n");
-                    int choixY = Integer.parseInt(sc.nextLine());
+                while(true){
+                    System.out.println("Vous avez saisi : " + choix);
+                    if (choix2.equals("F")) {
+                        choix = "quit";
+                        break;
+                    }
+                    if (choix2.equals("A")) {
+                        System.out.println("""
+                            Quelle forme voulez-vous ajouter ?\s
+                            1 - Un Point\s
+                            2 - Une Ligne\s
+                            3 - Un Cercle\s
+                            4 - Un Carre\s
+                            5 - Un Rectangle\s
+                            6 - Un Polygone\s
+                            7 - Revenir au menu précédent""");
+                        choix2 = sc.nextLine();
+                        System.out.println("\nVous avez saisi : " + choix2);
+                        if (choix2.equals("7")) {
+                            choix = "menu";
+                            choix2 = "";
+                            break;
+                        }
+                        if (choix2.equals("1")) {
+                            System.out.println("Entrez coordonnées x :");
+                            int choixX = Integer.parseInt(sc.nextLine());
 
-                    Point p = new Point(choixX,choixY);
+                            System.out.println("Entrez coordonnées y :");
+                            int choixY = Integer.parseInt(sc.nextLine());
 
-                    layer.addShape(p);
+                            Point p = new Point(choixX, choixY);
 
-                    screen.addLayer(layer);
+                            layer.addShape(p);
+                            screen.addLayer(layer);
+                            System.out.println(screen);
 
-                    screen.dessin();
-                    System.out.println(screen);
-                    continue;
+                            choix = "menu";
+                            choix2 = "null";
+                            break;
+                        }
+                        else{
+                            System.out.println("\n !!! Choix invalide !!!\n");
+                            choix2 = "A";
+                        }
+                    }
+                    if(choix2.equals("B")){
+                        screen.showLayers();
+                        layer.showShapes();
+                        break;
+                    }
+                    if(choix2.equals("C")){
+                        System.out.println("Quelle forme(ID) voulez-vous supprimer ? (\"No\" to quit)");
+                        String suppShape = sc.nextLine();
+                        if(suppShape.equals("No")){
+                            break;
+                        }
+                        layer.removeShape(parseInt(suppShape));
+
+                    }
+                    if(choix2.equals("D")){
+                        System.out.println(screen);
+                        break;
+                    }
                 }
             }
             else {
-                System.out.println("Choix invalide : \n");
-                continue;
+                System.out.println("\n !!! Choix invalide !!!\n");
+                choix = "menu";
             }
-        }*/
-
-
-
+        }
     }
 }
 
