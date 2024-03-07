@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 import static java.lang.System.out;
 
@@ -65,8 +66,6 @@ class Main {
         screen1.showLayers();
         */
 
-
-
         /////////////////////////////////////////////////// FORME
         /////////////////// POINT
         // Créer une instance de la classe Point
@@ -81,7 +80,7 @@ class Main {
 
         /////////////////// CERCLE
         // Créer un Point
-        Point center = new Point(5, 5);
+        Point center = new Point(6, 6);
         // Créer un cercle
         Circle cercle = new Circle(center, 4);
 
@@ -123,18 +122,82 @@ class Main {
         // Créer une instance de la classe Layer
         Layer layer = new Layer();
         // Ajoute la forme Point au layer
-        layer.addShape(curve);
+        layer.addShape(cercle);
         //layer.addShape(ligne);
 
         /////////////////////////////////////////////////// SCREEN
         // Créer une instance de la classe Screen
-        Screen screen = new Screen(10, 10);
+        Screen screen = new Screen(15, 15);
         // Ajoute le layer à l'écran
         screen.addLayer(layer);
         // Dessine les formes sur l'écran
         screen.dessin();
         // Afficher l'écran
         System.out.println(screen);
+        
+
+        /**
+        // Créer une instance de la classe Screen
+        Screen screen = new Screen(20, 5);
+        System.out.println(screen);
+
+        // Créer une instance de la classe Layer
+        Layer layer = new Layer();
+
+        Scanner sc = new Scanner(System.in);
+        String choix = "menu";
+        String choix2 = "null";
+
+        while (choix != "quit"){
+            if (choix == "menu")
+                System.out.println("Veuillez choisir une action : \n" +
+                        "A - Ajouter une forme \n" +
+                        "B - Afficher la liste des formes \n" +
+                        "C - Supprimer une forme \n" +
+                        "D - Tracer le dessin" +
+                        "E - Aide\n" +
+                        "F - Quitter");
+            choix = sc.nextLine();
+            System.out.println("Vous avez saisi : " + choix);
+            if (choix.equals("A")){
+                System.out.println("Quelle forme voulez-vous ajouter ? \n" +
+                        "1 - Un Point \n" +
+                        "2 - Une Ligne \n" +
+                        "3 - Un Cercle \n" +
+                        "4 - Un Carre \n" +
+                        "5 - Un Rectangle \n" +
+                        "6 - Un Polygone \n" +
+                        "7 - Revenir au menu précédent");
+                choix2 = sc.nextLine();
+                System.out.println("Vous avez saisi : " + choix2);
+                if(choix2.equals("7")){
+                    break;
+                }
+                else if(choix2.equals("1")){
+                    System.out.println("Entrez coordonnées x : \n");
+                    int choixX = Integer.parseInt(sc.nextLine());
+                    System.out.println("Entrez coordonnées y : \n");
+                    int choixY = Integer.parseInt(sc.nextLine());
+
+                    Point p = new Point(choixX,choixY);
+
+                    layer.addShape(p);
+
+                    screen.addLayer(layer);
+
+                    screen.dessin();
+                    System.out.println(screen);
+                    continue;
+                }
+            }
+            else {
+                System.out.println("Choix invalide : \n");
+                continue;
+            }
+        }*/
+
+
+
     }
 }
 
