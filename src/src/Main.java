@@ -134,7 +134,7 @@ class Main {
         screen.dessin();
         // Afficher l'écran
         System.out.println(screen);
-        
+
 
         /**
         // Créer une instance de la classe Screen
