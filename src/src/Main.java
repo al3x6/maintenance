@@ -1,3 +1,5 @@
+import org.w3c.dom.css.Rect;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -139,11 +141,16 @@ class Main {
 */
 
         // Créer une instance de la classe Screen
-        Screen screen = new Screen(20, 5);
+        Screen screen = new Screen(40, 20);
         System.out.println(screen);
 
         // Créer une instance de la classe Layer
         Layer layer = new Layer();
+
+
+        Scanner scanner = new Scanner(System.in);
+
+
 
         Scanner sc = new Scanner(System.in);
         String choix = "menu";
@@ -177,10 +184,11 @@ class Main {
                             4 - Un Carre\s
                             5 - Un Rectangle\s
                             6 - Un Polygone\s
-                            7 - Revenir au menu précédent""");
+                            7 - Une Curve\s
+                            8 - Revenir au menu précédent""");
                         choix2 = sc.nextLine();
                         System.out.println("\nVous avez saisi : " + choix2);
-                        if (choix2.equals("7")) {
+                        if (choix2.equals("8")) {
                             choix = "menu";
                             choix2 = "";
                             break;
@@ -195,6 +203,141 @@ class Main {
                             Point p = new Point(choixX, choixY);
 
                             layer.addShape(p);
+                            screen.addLayer(layer);
+                            System.out.println(screen);
+
+                            choix = "menu";
+                            choix2 = "null";
+                            break;
+                        }
+                        if (choix2.equals("2")) {
+                            System.out.println("Entrez coordonnées x du premier point :");
+                            int choixX = Integer.parseInt(sc.nextLine());
+
+                            System.out.println("Entrez coordonnées y du premier point:");
+                            int choixY = Integer.parseInt(sc.nextLine());
+
+                            Point p = new Point(choixX, choixY);
+
+                            System.out.println("Entrez coordonnées x du deuxième point :");
+                            choixX = Integer.parseInt(sc.nextLine());
+
+                            System.out.println("Entrez coordonnées y du deuxième point:");
+                             choixY = Integer.parseInt(sc.nextLine());
+
+                            Point p2 = new Point(choixX, choixY);
+                            Line l=new Line(p,p2);
+
+                            layer.addShape(l);
+                            screen.addLayer(layer);
+                            System.out.println(screen);
+
+                            choix = "menu";
+                            choix2 = "null";
+                            break;
+                        }
+                        if (choix2.equals("3")) {
+                            System.out.println("Entrez coordonnées x du premier point :");
+                            int choixX = Integer.parseInt(sc.nextLine());
+
+                            System.out.println("Entrez coordonnées y du premier point:");
+                            int choixY = Integer.parseInt(sc.nextLine());
+
+                            Point p = new Point(choixX, choixY);
+
+                            System.out.println("Entrez le rayon :");
+                            int rayon = Integer.parseInt(sc.nextLine());
+
+                            Circle c = new Circle(p,rayon);
+
+                            layer.addShape(c);
+                            screen.addLayer(layer);
+                            System.out.println(screen);
+
+                            choix = "menu";
+                            choix2 = "null";
+                            break;
+                        }
+                        if (choix2.equals("4")) {
+                            System.out.println("Entrez coordonnées x :");
+                            int choixX = Integer.parseInt(sc.nextLine());
+
+                            System.out.println("Entrez coordonnées y :");
+                            int choixY = Integer.parseInt(sc.nextLine());
+
+                            Point p = new Point(choixX, choixY);
+
+                            System.out.println("Entrez width :");
+                            int width = Integer.parseInt(sc.nextLine());
+
+                            Square s = new Square(p,width);
+                            layer.addShape(s);
+                            screen.addLayer(layer);
+                            System.out.println(screen);
+
+                            choix = "menu";
+                            choix2 = "null";
+                            break;
+                        }
+                        if (choix2.equals("5")) {
+                            System.out.println("Entrez coordonnées x :");
+                            int choixX = Integer.parseInt(sc.nextLine());
+
+                            System.out.println("Entrez coordonnées y :");
+                            int choixY = Integer.parseInt(sc.nextLine());
+
+                            Point p = new Point(choixX, choixY);
+
+                            System.out.println("Entrez width :");
+                            int width = Integer.parseInt(sc.nextLine());
+
+                            System.out.println("Entrez height :");
+                            int height = Integer.parseInt(sc.nextLine());
+
+                            Rectangle r = new Rectangle(p,width,height);
+                            layer.addShape(r);
+                            screen.addLayer(layer);
+                            System.out.println(screen);
+
+                            choix = "menu";
+                            choix2 = "null";
+                            break;
+                        }
+                        if (choix2.equals("6")) {
+                            ArrayList<Point> lp = new ArrayList<>();
+                            System.out.println("Combien voulez-vous de points ?");
+                            int nbrP = Integer.parseInt(sc.nextLine());
+                            for(int i =0;i<nbrP; i++){
+                                System.out.println("Entrez coordonnées x du point numéro "+(i+1)+" :");
+                                int choixX = Integer.parseInt(sc.nextLine());
+                                System.out.println("Entrez coordonnées y du point numéro "+(i+1)+" :");
+                                int choixY = Integer.parseInt(sc.nextLine());
+                                Point p = new Point(choixX,choixY);
+                                lp.add(p);
+                            }
+
+                            Polygon p = new Polygon(lp);
+                            layer.addShape(p);
+                            screen.addLayer(layer);
+                            System.out.println(screen);
+
+                            choix = "menu";
+                            choix2 = "null";
+                            break;
+                        }
+                        if (choix2.equals("7")) {
+                            ArrayList<Point> lp = new ArrayList<>();
+                            for(int i =0;i<4; i++){
+                                System.out.println("Entrez coordonnées x du point numéro "+(i+1)+" :");
+                                int choixX = Integer.parseInt(sc.nextLine());
+                                System.out.println("Entrez coordonnées y du point numéro "+(i+1)+" :");
+                                int choixY = Integer.parseInt(sc.nextLine());
+                                Point p = new Point(choixX,choixY);
+                                lp.add(p);
+                            }
+
+                            Curve c = new Curve(lp);
+                            layer.addShape(c);
                             screen.addLayer(layer);
                             System.out.println(screen);
 
@@ -219,17 +362,20 @@ class Main {
                             break;
                         }
                         layer.removeShape(parseInt(suppShape));
-
+                        break;
                     }
                     if(choix2.equals("D")){
                         System.out.println(screen);
+                        break;
+                    }
+                    else{
+                        System.out.println("\n !!! Choix invalide !!!\n");
                         break;
                     }
                 }
             }
             else {
                 System.out.println("\n !!! Choix invalide !!!\n");
-                choix = "menu";
             }
         }
     }
